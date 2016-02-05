@@ -12,7 +12,7 @@ namespace ParticleMy
         static Random rand = new Random();
 
         public Vector2 Size { get { return textSize * scale; } }
-        public Color Color = new Color(10, 30, 255);  // almost pure blue
+        public Color Color = new Color(255, 128,0);  // almost pure blue
 
         List<Particle> textParticles = new List<Particle>();
         Texture2D particleTexture;
@@ -106,6 +106,7 @@ namespace ParticleMy
         {
             foreach (var particle in textParticles)
             {
+               
                 Vector2 pos = particle.Position * scale;
                 Vector2 origin = new Vector2(particleTexture.Width, particleTexture.Height) / 2f;
                 spriteBatch.Draw(particleTexture, pos, null, Color, 0f, origin, 1f, SpriteEffects.None, 0);
